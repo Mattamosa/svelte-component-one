@@ -1,24 +1,18 @@
 <script>
     export let text;
-    export let type = "primary"; // default type is primary
+    export let type = "primary"; // Default type is primary
   
+    // Button classes based on the type
     let buttonClass = 
-      type === "primary"
-        ? "bg-btnColor text-white"
+      type === "primary" // Switch to 'secondary' to see the changes
+        ? "bg-btnColor text-white hover:bg-btnColor2"
         : type === "secondary"
-        ? "text-btnColor border border-btnColor"
-        : "text-gray-500 cursor-not-allowed";
+        ? "text-btnColor hover:bg-btnColor2"
+        : "text-btnColor cursor-not-allowed";
   </script>
   
-  <button class="w-[18.563rem] h-12 rounded-[3rem] text-base font-medium mb-2 cursor-pointer {buttonClass}">
+  <button class={`w-full h-12 rounded-full text-base font-medium mb-2 ${buttonClass}`}>
     {text}
   </button>
   
-  <style>
-    .bg-btnColor {
-      background-color: #1d4ed8;
-    }
-    .text-btnColor {
-      color: #1d4ed8;
-    }
-  </style>
+  
